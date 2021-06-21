@@ -1,0 +1,5 @@
+{
+	"endpoints": [ "http://localhost" ],
+	"path": "Packages",
+	"extensions": [ ".tgz", ".tar.gz", ".taz" ]
+}
