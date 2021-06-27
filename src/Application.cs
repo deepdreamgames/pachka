@@ -1102,7 +1102,7 @@ namespace DeepDreamGames
 		// 
 		static private void WritePrompt()
 		{
-			if (hasPrompt) { return; }
+			if (hasPrompt || Console.IsOutputRedirected) { return; }
 
 			hasPrompt = true;
 			Console.ForegroundColor = promptColor;
@@ -1263,7 +1263,10 @@ namespace DeepDreamGames
 
 			bool hadPrompt = hasPrompt;
 			hasPrompt = false;
-			Console.CursorLeft = 0;
+			if (!Console.IsOutputRedirected)
+			{
+				Console.CursorLeft = 0;
+			}
 			Console.Write(message);
 			Console.Write('\n');
 			Console.ForegroundColor = cached;
@@ -1396,7 +1399,10 @@ namespace DeepDreamGames
 		// 
 		static private void CommandClear(string[] args)
 		{
-			Console.Clear();
+			if (!Console.IsOutputRedirected)
+			{
+				Console.Clear();
+			}
 		}
 
 		// 
