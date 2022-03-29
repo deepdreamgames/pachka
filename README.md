@@ -13,7 +13,7 @@ Packages is a great way to share code and assets between Unity projects, but wit
 
 * Cross-platform (tested on Windows, Linux and Mac)
 * Low memory consumption (consumes less than 15 MB of RAM with 60 active packages). 
-* References only `System.dll` (contains custom implementations for Tar, Json Reader, Json Writer and (non-allocating!) [Semantic Version](https://semver.org/) value parsing and comparison)
+* References only `mscorlib.dll`, `System.dll` and `System.Core.dll` (contains custom implementations for Tar, Json Reader, Json Writer and (non-allocating!) [Semantic Version](https://semver.org/) value parsing and comparison)
 * Basic command line interface for interactivity and logging which can be extended as necessary (see `RegisterCommands()` in `Application.cs`). Available commands: 
   - `help` - list available commmands
   - `clear` - clear console
